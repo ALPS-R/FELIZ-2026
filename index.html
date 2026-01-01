@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Ano Novo 2026! 🎆</title>
+    
+    <!-- Meta tags para compartilhamento -->
+    <meta property="og:title" content="Feliz Ano Novo 2026!">
+    <meta property="og:description" content="Mensagem personalizada de Ano Novo com suas melhores energias!">
+    
+    <!-- Fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Biblioteca html2canvas para gerar imagem -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <style>
+        /* RESET E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a2a, #1a1a4a);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            transition: background 0.5s;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* MODOS DE COR */
+        body.modo-claro {
+            background: linear-gradient(135deg, #4a6fa5, #6d9dc5);
+            color: #333;
+        }
+        
+        body.modo-claro .container {
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ANIMAÇÃO DE FUNDO - NEVE/CONFETES */
+        #snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        
+        /* CABEÇALHO */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .ano {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 10px 0;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
+        }
+        
+        /* TELA DE SELEÇÃO */
+        #tela-selecao {
+            text-align: center;
+        }
+        
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .opcao {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+        
+        .opcao:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #FFD700;
+            transform: translateY(-5px);
+        }
+        
+        .opcao.selecionada {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+        }
+        
+        .opcao h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* FORMULÁRIOS */
+        .tela {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tela.ativa {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FFD700;
+            font-weight: 600;
+        }
+        
+        .grupo-remetente {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .grupo-remetente h4 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* SELECT E INPUTS */
+        select, input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        select option {
+            background: #0a0a2a;
+            color: white;
+            padding: 10px;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        /* BOTÕES */
+        .botoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 150px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primario {
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            color: #0a0a2a;
+        }
+        
+        .btn-secundario {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* MENSAGEM EXIBIDA */
+        #mensagem-exibida {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .mensagem-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #FFD700;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mensagem-container::before {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+        
+        .destinatario {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .mensagem-texto {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+        
+        .remetente {
+            text-align: right;
+            font-style: italic;
+            color: #4ECDC4;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .remetente strong {
+            color: #FFD700;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        /* LISTA DE DESTINATÁRIOS COM GRUPOS */
+        .grupos-destinatarios {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .grupo-lista {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .grupo-lista h4 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .grupo-lista ul {
+            list-style: none;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .grupo-lista li {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid;
+        }
+        
+        .grupo-lista li:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateX(5px);
+        }
+        
+        /* EFEITOS ESPECIAIS */
+        .fogos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .fogo {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: explodir 1s forwards;
+        }
+        
+        @keyframes explodir {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(var(--y)) translateX(var(--x)) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* NOTIFICAÇÕES */
+        .notificacao {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4ECDC4;
+            color: #0a0a2a;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: slideIn 0.3s, slideOut 0.3s 2.7s forwards;
+            max-width: 300px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* CONTAINER PARA GERAR IMAGEM */
+        #container-imagem {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            width: 600px;
+            padding: 40px;
+            background: linear-gradient(135deg, #0a0a2a, #1a1a4a);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+        
+        #container-imagem .cabecalho-imagem {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #FFD700;
+        }
+        
+        #container-imagem .titulo-imagem {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        #container-imagem .ano-imagem {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 10px 0;
+        }
+        
+        #container-imagem .mensagem-imagem {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #FFD700;
+        }
+        
+        #container-imagem .destinatario-imagem {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        #container-imagem .texto-imagem {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+        
+        #container-imagem .remetente-imagem {
+            text-align: right;
+            font-style: italic;
+            color: #4ECDC4;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+        
+        /* INDICADOR DE CARREGAMENTO */
+        .carregando {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            flex-direction: column;
+            gap: 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 215, 0, 0.3);
+            border-top: 5px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* CONTROLES */
+        .controles {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .controle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .controle-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: scale(1.1);
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .ano {
+                font-size: 3rem;
+            }
+            
+            .botoes {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .grupos-destinatarios {
+                grid-template-columns: 1fr;
+            }
+            
+            #container-imagem {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .ano {
+                font-size: 2.5rem;
+            }
+            
+            .opcao {
+                padding: 15px;
+            }
+            
+            .controles {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .controle-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Efeito de neve/confetes -->
+    <div id="snow"></div>
+    
+    <!-- Efeito de fogos -->
+    <div id="fogos"></div>
+    
+    <!-- Container para gerar imagem (oculto) -->
+    <div id="container-imagem" style="display: none;">
+        <div class="cabecalho-imagem">
+            <div class="titulo-imagem">Feliz Ano Novo!</div>
+            <div class="ano-imagem">2026</div>
+            <div>Que este novo ciclo traga muitas bênçãos e alegrias!</div>
+        </div>
+        
+        <div class="mensagem-imagem">
+            <div class="destinatario-imagem" id="img-destinatario"></div>
+            <div class="texto-imagem" id="img-texto"></div>
+            <div class="remetente-imagem" id="img-remetente"></div>
+        </div>
+    </div>
+    
+    <!-- Indicador de carregamento -->
+    <div id="carregando" class="carregando" style="display: none;">
+        <div class="spinner"></div>
+        <div>Gerando imagem para compartilhar...</div>
+    </div>
+    
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>Feliz Ano Novo!</h1>
+            <div class="ano">2026</div>
+            <p>Que este novo ciclo traga muitas bênçãos e alegrias!</p>
+        </header>
+        
+        <!-- Tela de seleção de versão -->
+        <section id="tela-selecao" class="tela ativa">
+            <h2>Escolha como deseja receber suas felicitações:</h2>
+            
+            <div class="opcoes">
+                <div class="opcao" data-opcao="lista">
+                    <h3>📋 Versão para Lista Prévia</h3>
+                    <p>Para destinatários específicos. Insira seu nome para ver uma mensagem personalizada.</p>
+                </div>
+                
+                <div class="opcao" data-opcao="livre">
+                    <h3>🎁 Versão Livre</h3>
+                    <p>Para qualquer pessoa. Insira os nomes do destinatário e escolha o remetente.</p>
+                </div>
+            </div>
+            
+            <div class="botoes">
+                <button id="btn-continuar" class="btn btn-primario">
+                    Continuar
+                </button>
+            </div>
+        </section>
+        
+        <!-- Tela para lista prévia -->
+        <section id="tela-lista" class="tela">
+            <h2>Versão para Lista Prévia</h2>
+            <p>Digite seu nome completo para ver sua mensagem personalizada:</p>
+            
+            <div class="form-group">
+                <input type="text" id="nome-destinatario-lista" 
+                       placeholder="Digite seu nome completo" 
+                       autocomplete="off">
+                
+                <div class="grupos-destinatarios" id="grupos-destinatarios">
+                    <!-- Grupos serão preenchidos pelo JavaScript -->
+                </div>
+            </div>
+            
+            <div class="botoes">
+                <button id="btn-verificar-lista" class="btn btn-primario">
+                    Verificar Mensagem
+                </button>
+                <button id="btn-voltar-lista" class="btn btn-secundario">
+                    Voltar
+                </button>
+            </div>
+        </section>
+        
+        <!-- Tela para versão livre -->
+        <section id="tela-livre" class="tela">
+            <h2>Versão Livre</h2>
+            <p>Preencha os campos para criar uma mensagem personalizada:</p>
+            
+            <div class="form-group">
+                <label for="nome-destinatario-livre">Destinatário:</label>
+                <input type="text" id="nome-destinatario-livre" 
+                       placeholder="Nome do destinatário" 
+                       autocomplete="off">
+            </div>
+            
+            <div class="grupo-remetente">
+                <h4>Escolha o Remetente:</h4>
+                <select id="select-remetente-livre">
+                    <option value="">Selecione um remetente</option>
+                    <option value="andre">André Paixão</option>
+                    <option value="andre_patricia">André Paixão e Patricia Paixão</option>
+                    <option value="patricia">Patricia Paixão</option>
+                    <option value="personalizado">Personalizado (outro remetente)</option>
+                </select>
+                
+                <div id="container-remetente-personalizado" style="display: none;">
+                    <input type="text" id="nome-remetente-personalizado" 
+                           placeholder="Digite o nome do remetente">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="mensagem-personalizada">Mensagem Personalizada (opcional):</label>
+                <textarea id="mensagem-personalizada" 
+                          placeholder="Digite uma mensagem personalizada ou use a padrão"></textarea>
+            </div>
+            
+            <div class="botoes">
+                <button id="btn-gerar-livre" class="btn btn-primario">
+                    Gerar Mensagem
+                </button>
+                <button id="btn-voltar-livre" class="btn btn-secundario">
+                    Voltar
+                </button>
+            </div>
+        </section>
+        
+        <!-- Tela de mensagem exibida -->
+        <section id="tela-mensagem" class="tela">
+            <div id="mensagem-exibida">
+                <h2>Sua Mensagem de Ano Novo 🎉</h2>
+                
+                <div class="mensagem-container" id="mensagem-para-imagem">
+                    <div class="destinatario" id="msg-destinatario">
+                        <!-- Nome do destinatário -->
+                    </div>
+                    
+                    <div class="mensagem-texto" id="msg-texto">
+                        <!-- Texto da mensagem -->
+                    </div>
+                    
+                    <div class="remetente" id="msg-remetente">
+                        <!-- Assinatura do remetente -->
+                    </div>
+                </div>
+                
+                <div class="botoes">
+                    <button id="btn-gerar-imagem" class="btn btn-primario">
+                        🖼️ Gerar Imagem para Compartilhar
+                    </button>
+                    <button id="btn-compartilhar-texto" class="btn btn-secundario">
+                        📱 Compartilhar Texto
+                    </button>
+                    <button id="btn-nova-mensagem" class="btn btn-secundario">
+                        ✨ Nova Mensagem
+                    </button>
+                </div>
+                
+                <div id="imagem-gerada" style="margin-top: 20px; display: none;">
+                    <p><strong>Sua imagem foi gerada!</strong></p>
+                    <img id="imagem-resultado" src="" alt="Imagem da mensagem" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+                    <p>Salve esta imagem e compartilhe no WhatsApp!</p>
+                    <button id="btn-baixar-imagem" class="btn btn-primario" style="margin-top: 10px;">
+                        💾 Baixar Imagem
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Controles -->
+    <div class="controles">
+        <button class="controle-btn" id="btn-ajuda" title="Dicas de uso">
+            ❓
+        </button>
+    </div>
+    
+    <!-- Notificações -->
+    <div id="notificacao" class="notificacao" style="display: none;"></div>
+    
+    <!-- Script principal -->
+    <script>
+        // CONFIGURAÇÕES INICIAIS
+        const CONFIG = {
+            ano: 2026,
+            mensagemPadrao: `Que este novo ano de ${new Date().getFullYear() + 1} traga:\n\n✨ Saúde e disposição\n✨ Paz e harmonia\n✨ Prosperidade e sucesso\n✨ Muito amor e felicidade\n\nQue cada dia seja uma nova oportunidade para construir memórias incríveis e alcançar todos os seus objetivos!`,
+            tema: 'escuro'
+        };
+        
+        // REMETENTES DISPONÍVEIS
+        const REMETENTES = {
+            andre: {
+                nome: "André Paixão",
+                descricao: "Amigos e Familiares de André Paixão",
+                corBorda: "#FF6B6B"
+            },
+            andre_patricia: {
+                nome: "André Paixão e Patricia Paixão",
+                descricao: "Amigos em comum (André e Patricia)",
+                corBorda: "#4ECDC4"
+            },
+            patricia: {
+                nome: "Patricia Paixão",
+                descricao: "Amigos e Familiares de Patricia Paixão",
+                corBorda: "#FFD700"
+            }
+        };
+        
+        // LISTA DE DESTINATÁRIOS PRÉ-DEFINIDOS POR GRUPO
+        // ADICIONE SEUS CONTATOS AQUI, ORGANIZADOS POR GRUPO
+        const listaDestinatarios = {
+    andre: [
+        {
+            nome: "Andray Wellington Paixão dos Santos",
+            mensagemPersonalizada: "Andray Wellington Paixão dos Santos, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Adrielle Cristina Paixão dos Santos",
+            mensagemPersonalizada: "Adrielle Cristina Paixão dos Santos, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Mônica, Coordenadora",
+            mensagemPersonalizada: "Mônica, Coordenadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "WALNIZIA FERREIRA",
+            mensagemPersonalizada: "WALNIZIA FERREIRA, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "ELENE CABRAL",
+            mensagemPersonalizada: "ELENE CABRAL, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "EDMILSON PIRES",
+            mensagemPersonalizada: "EDMILSON PIRES, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "RAFAEL GUIMARAES",
+            mensagemPersonalizada: "RAFAEL GUIMARAES, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "MAURO COSTA",
+            mensagemPersonalizada: "MAURO COSTA, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "CARLOS FIGUEIREDO",
+            mensagemPersonalizada: "CARLOS FIGUEIREDO, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "KASSIA FARIA",
+            mensagemPersonalizada: "KASSIA FARIA, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "ALDO OLIVEIRA",
+            mensagemPersonalizada: "ALDO OLIVEIRA, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Alessandro Valente Raad",
+            mensagemPersonalizada: "Alessandro Valente Raad, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Djane Cruz Machado dos Santos",
+            mensagemPersonalizada: "Djane Cruz Machado dos Santos, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Elizabete Silva de Moraes",
+            mensagemPersonalizada: "Elizabete Silva de Moraes, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Grazieli Suzana Souza de Moraes",
+            mensagemPersonalizada: "Grazieli Suzana Souza de Moraes, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Linda Karoline Damasceno Guimarães",
+            mensagemPersonalizada: "Linda Karoline Damasceno Guimarães, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Lilia Cláudia Paulo Pereira Costa",
+            mensagemPersonalizada: "Lilia Cláudia Paulo Pereira Costa, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Marcelo José Leite da Silva",
+            mensagemPersonalizada: "Marcelo José Leite da Silva, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Nixon Macedo dos Santos",
+            mensagemPersonalizada: "Nixon Macedo dos Santos, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Odineide do Socorro Ferreira Feitosa",
+            mensagemPersonalizada: "Odineide do Socorro Ferreira Feitosa, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Renata Esthefany Melo Amaral",
+            mensagemPersonalizada: "Renata Esthefany Melo Amaral, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Ruth Helena Garcia Nascimento",
+            mensagemPersonalizada: "Ruth Helena Garcia Nascimento, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Saulo Alexsander da Silva Alencar",
+            mensagemPersonalizada: "Saulo Alexsander da Silva Alencar, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Suellen Correia da Silva",
+            mensagemPersonalizada: "Suellen Correia da Silva, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        },
+        {
+            nome: "Wellington Costa de Oliveira",
+            mensagemPersonalizada: "Wellington Costa de Oliveira, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FF6B6B"
+        }
+    ],
+
+    andre_patricia: [
+        {
+            nome: "Davi Oliveira, Trovador",
+            mensagemPersonalizada: "Davi Oliveira, Trovador, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Flexa Ribeiro, Trovador",
+            mensagemPersonalizada: "Flexa Ribeiro, Trovador, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Graziela Melo, Trovadora",
+            mensagemPersonalizada: "Graziela Melo, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Hanna Monique, Trovadora",
+            mensagemPersonalizada: "Hanna Monique, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "João Luís, Trovador",
+            mensagemPersonalizada: "João Luís, Trovador, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Mari Lobato, Trovadora",
+            mensagemPersonalizada: "Mari Lobato, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Shirley, Trovadora",
+            mensagemPersonalizada: "Shirley, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Wanessa Solli, Trovadora",
+            mensagemPersonalizada: "Wanessa Solli, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Wal Gaia, Trovadora",
+            mensagemPersonalizada: "Wal Gaia, Trovadora, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        },
+        {
+            nome: "Wellington Lima, Trovador",
+            mensagemPersonalizada: "Wellington Lima, Trovador, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#4ECDC4"
+        }
+    ],
+
+    patricia: [
+        {
+            nome: "Eliane Malcher",
+            mensagemPersonalizada: "Eliane Malcher, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Roseli Ramos",
+            mensagemPersonalizada: "Roseli Ramos, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Joelma Rodrigues",
+            mensagemPersonalizada: "Joelma Rodrigues, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Joelma Sá",
+            mensagemPersonalizada: "Joelma Sá, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Jaciene Cambraia",
+            mensagemPersonalizada: "Jaciene Cambraia, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Francis Durans",
+            mensagemPersonalizada: "Francis Durans, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Joana Costa",
+            mensagemPersonalizada: "Joana Costa, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Adália Costa",
+            mensagemPersonalizada: "Adália Costa, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Aldalice Cristina",
+            mensagemPersonalizada: "Aldalice Cristina, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "José Duarte",
+            mensagemPersonalizada: "José Duarte, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Priscilla Macedo",
+            mensagemPersonalizada: "Priscilla Macedo, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Keileane Cambraia",
+            mensagemPersonalizada: "Keileane Cambraia, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Leidi Maria",
+            mensagemPersonalizada: "Leidi Maria, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Debora Cristina",
+            mensagemPersonalizada: "Debora Cristina, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Adriane Seixas",
+            mensagemPersonalizada: "Adriane Seixas, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Lorena Bittencourt",
+            mensagemPersonalizada: "Lorena Bittencourt, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Edricio Rodrigues",
+            mensagemPersonalizada: "Edricio Rodrigues, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Valdecir Amintas",
+            mensagemPersonalizada: "Valdecir Amintas, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Raimundo Palheta",
+            mensagemPersonalizada: "Raimundo Palheta, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Davidson Lennon",
+            mensagemPersonalizada: "Davidson Lennon, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Francisca Nunes",
+            mensagemPersonalizada: "Francisca Nunes, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        },
+        {
+            nome: "Edivaldo Rodrigues",
+            mensagemPersonalizada: "Edivaldo Rodrigues, que 2026 traga muita saúde, paz, prosperidade e felicidade! Desejo um ano repleto de conquistas e momentos especiais.",
+            corEspecial: "#FFD700"
+        }
+    ]
+};
+        
+        // VARIÁVEIS DE CONTROLE
+        let opcaoSelecionada = null;
+        let mensagemAtual = null;
+        
+        // ELEMENTOS DO DOM
+        const elementos = {
+            // Telas
+            telaSelecao: document.getElementById('tela-selecao'),
+            telaLista: document.getElementById('tela-lista'),
+            telaLivre: document.getElementById('tela-livre'),
+            telaMensagem: document.getElementById('tela-mensagem'),
+            
+            // Botões de seleção
+            opcoes: document.querySelectorAll('.opcao'),
+            btnContinuar: document.getElementById('btn-continuar'),
+            
+            // Lista prévia
+            nomeLista: document.getElementById('nome-destinatario-lista'),
+            btnVerificarLista: document.getElementById('btn-verificar-lista'),
+            btnVoltarLista: document.getElementById('btn-voltar-lista'),
+            gruposDestinatarios: document.getElementById('grupos-destinatarios'),
+            
+            // Versão livre
+            nomeLivreDest: document.getElementById('nome-destinatario-livre'),
+            selectRemetente: document.getElementById('select-remetente-livre'),
+            containerRemetentePersonalizado: document.getElementById('container-remetente-personalizado'),
+            nomeRemetentePersonalizado: document.getElementById('nome-remetente-personalizado'),
+            mensagemPersonalizada: document.getElementById('mensagem-personalizada'),
+            btnGerarLivre: document.getElementById('btn-gerar-livre'),
+            btnVoltarLivre: document.getElementById('btn-voltar-livre'),
+            
+            // Mensagem exibida
+            msgDestinatario: document.getElementById('msg-destinatario'),
+            msgTexto: document.getElementById('msg-texto'),
+            msgRemetente: document.getElementById('msg-remetente'),
+            btnGerarImagem: document.getElementById('btn-gerar-imagem'),
+            btnCompartilharTexto: document.getElementById('btn-compartilhar-texto'),
+            btnNovaMensagem: document.getElementById('btn-nova-mensagem'),
+            imagemGerada: document.getElementById('imagem-gerada'),
+            imagemResultado: document.getElementById('imagem-resultado'),
+            btnBaixarImagem: document.getElementById('btn-baixar-imagem'),
+            
+            // Controles
+            btnAjuda: document.getElementById('btn-ajuda'),
+            
+            // Efeitos
+            snow: document.getElementById('snow'),
+            fogos: document.getElementById('fogos'),
+            
+            // Notificação
+            notificacao: document.getElementById('notificacao'),
+            
+            // Carregando
+            carregando: document.getElementById('carregando'),
+            
+            // Container para imagem
+            containerImagem: document.getElementById('container-imagem'),
+            imgDestinatario: document.getElementById('img-destinatario'),
+            imgTexto: document.getElementById('img-texto'),
+            imgRemetente: document.getElementById('img-remetente')
+        };
+        
+        // INICIALIZAÇÃO
+        function inicializar() {
+            // Configurar eventos
+            configurarEventos();
+            
+            // Inicializar efeitos visuais
+            criarNeve();
+            preencherGruposDestinatarios();
+            
+            // Mostrar notificação de boas-vindas
+            setTimeout(() => {
+                mostrarNotificacao("✨ Bem-vindo às felicitações de Ano Novo 2026!");
+            }, 1000);
+        }
+        
+        // CONFIGURAR EVENTOS
+        function configurarEventos() {
+            // Seleção de opções
+            elementos.opcoes.forEach(opcao => {
+                opcao.addEventListener('click', () => {
+                    elementos.opcoes.forEach(o => o.classList.remove('selecionada'));
+                    opcao.classList.add('selecionada');
+                    opcaoSelecionada = opcao.dataset.opcao;
+                });
+            });
+            
+            // Botão continuar
+            elementos.btnContinuar.addEventListener('click', () => {
+                if (!opcaoSelecionada) {
+                    mostrarNotificacao("Selecione uma opção antes de continuar!");
+                    return;
+                }
+                
+                mudarTela(opcaoSelecionada === 'lista' ? 'tela-lista' : 'tela-livre');
+            });
+            
+            // Botão verificar lista
+            elementos.btnVerificarLista.addEventListener('click', verificarNomeLista);
+            
+            // Botão voltar (lista)
+            elementos.btnVoltarLista.addEventListener('click', () => mudarTela('tela-selecao'));
+            
+            // Botão gerar mensagem livre
+            elementos.btnGerarLivre.addEventListener('click', gerarMensagemLivre);
+            
+            // Botão voltar (livre)
+            elementos.btnVoltarLivre.addEventListener('click', () => mudarTela('tela-selecao'));
+            
+            // Seletor de remetente (versão livre)
+            elementos.selectRemetente.addEventListener('change', function() {
+                elementos.containerRemetentePersonalizado.style.display = 
+                    this.value === 'personalizado' ? 'block' : 'none';
+            });
+            
+            // Botões na tela de mensagem
+            elementos.btnGerarImagem.addEventListener('click', gerarImagemDaMensagem);
+            elementos.btnCompartilharTexto.addEventListener('click', compartilharTextoWhatsApp);
+            elementos.btnNovaMensagem.addEventListener('click', () => mudarTela('tela-selecao'));
+            elementos.btnBaixarImagem.addEventListener('click', baixarImagem);
+            
+            // Controles
+            elementos.btnAjuda.addEventListener('click', mostrarAjuda);
+            
+            // Permitir Enter nos campos de texto
+            elementos.nomeLista.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') verificarNomeLista();
+            });
+            
+            elementos.nomeLivreDest.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') elementos.btnGerarLivre.click();
+            });
+        }
+        
+        // MUDAR DE TELA
+        function mudarTela(telaAlvo) {
+            // Esconder todas as telas
+            elementos.telaSelecao.classList.remove('ativa');
+            elementos.telaLista.classList.remove('ativa');
+            elementos.telaLivre.classList.remove('ativa');
+            elementos.telaMensagem.classList.remove('ativa');
+            
+            // Mostrar tela alvo
+            document.getElementById(telaAlvo).classList.add('ativa');
+            
+            // Limpar campos se voltando à seleção
+            if (telaAlvo === 'tela-selecao') {
+                elementos.nomeLista.value = '';
+                elementos.nomeLivreDest.value = '';
+                elementos.selectRemetente.value = '';
+                elementos.containerRemetentePersonalizado.style.display = 'none';
+                elementos.nomeRemetentePersonalizado.value = '';
+                elementos.mensagemPersonalizada.value = '';
+                elementos.imagemGerada.style.display = 'none';
+                opcaoSelecionada = null;
+                elementos.opcoes.forEach(o => o.classList.remove('selecionada'));
+            }
+        }
+        
+        // PREENCHER GRUPOS DE DESTINATÁRIOS
+        function preencherGruposDestinatarios() {
+            elementos.gruposDestinatarios.innerHTML = '';
+            
+            // Para cada grupo de remetente
+            for (const grupoId in listaDestinatarios) {
+                const grupo = listaDestinatarios[grupoId];
+                const remetente = REMETENTES[grupoId];
+                
+                if (grupo.length > 0) {
+                    const grupoDiv = document.createElement('div');
+                    grupoDiv.className = 'grupo-lista';
+                    grupoDiv.style.borderLeft = `4px solid ${remetente.corBorda}`;
+                    
+                    grupoDiv.innerHTML = `
+                        <h4>${remetente.descricao}</h4>
+                        <ul id="lista-${grupoId}"></ul>
+                    `;
+                    
+                    elementos.gruposDestinatarios.appendChild(grupoDiv);
+                    
+                    // Preencher lista de nomes
+                    const listaUl = document.getElementById(`lista-${grupoId}`);
+                    grupo.forEach(destinatario => {
+                        const li = document.createElement('li');
+                        li.textContent = destinatario.nome;
+                        li.style.borderLeft = `3px solid ${destinatario.corEspecial}`;
+                        li.addEventListener('click', () => {
+                            elementos.nomeLista.value = destinatario.nome;
+                            elementos.nomeLista.focus();
+                        });
+                        
+                        listaUl.appendChild(li);
+                    });
+                }
+            }
+        }
+        
+        // VERIFICAR NOME NA LISTA PRÉVIA
+        function verificarNomeLista() {
+            const nomeDigitado = elementos.nomeLista.value.trim().toUpperCase();
+            
+            if (!nomeDigitado) {
+                mostrarNotificacao("Digite um nome para verificar!");
+                elementos.nomeLista.focus();
+                return;
+            }
+            
+            // Buscar em todos os grupos
+            let destinatarioEncontrado = null;
+            let grupoEncontrado = null;
+            
+            for (const grupoId in listaDestinatarios) {
+                const encontrado = listaDestinatarios[grupoId].find(d => 
+                    d.nome.toUpperCase() === nomeDigitado
+                );
+                
+                if (encontrado) {
+                    destinatarioEncontrado = encontrado;
+                    grupoEncontrado = grupoId;
+                    break;
+                }
+            }
+            
+            if (destinatarioEncontrado && grupoEncontrado) {
+                // Nome encontrado
+                mensagemAtual = {
+                    destinatario: destinatarioEncontrado.nome,
+                    remetente: REMETENTES[grupoEncontrado].nome,
+                    mensagem: destinatarioEncontrado.mensagemPersonalizada || CONFIG.mensagemPadrao,
+                    corEspecial: destinatarioEncontrado.corEspecial,
+                    grupo: grupoEncontrado
+                };
+                
+                exibirMensagem();
+                criarFogos(10);
+                mostrarNotificacao("Mensagem personalizada encontrada! 🎉");
+            } else {
+                // Nome não encontrado
+                mostrarNotificacao(`"${nomeDigitado}" não está na lista. Use a versão livre ou verifique a grafia.`);
+            }
+        }
+        
+        // GERAR MENSAGEM LIVRE
+        function gerarMensagemLivre() {
+            const destinatario = elementos.nomeLivreDest.value.trim();
+            let remetenteSelecionado = elementos.selectRemetente.value;
+            let remetente = "";
+            
+            if (!destinatario) {
+                mostrarNotificacao("Digite o nome do destinatário!");
+                elementos.nomeLivreDest.focus();
+                return;
+            }
+            
+            if (!remetenteSelecionado) {
+                mostrarNotificacao("Selecione um remetente!");
+                elementos.selectRemetente.focus();
+                return;
+            }
+            
+            // Definir remetente com base na seleção
+            if (remetenteSelecionado === 'personalizado') {
+                remetente = elementos.nomeRemetentePersonalizado.value.trim();
+                if (!remetente) {
+                    mostrarNotificacao("Digite o nome do remetente personalizado!");
+                    elementos.nomeRemetentePersonalizado.focus();
+                    return;
+                }
+            } else {
+                remetente = REMETENTES[remetenteSelecionado].nome;
+            }
+            
+            const mensagemPersonalizada = elementos.mensagemPersonalizada.value.trim();
+            
+            // Criar mensagem
+            mensagemAtual = {
+                destinatario: destinatario,
+                remetente: remetente,
+                mensagem: mensagemPersonalizada || CONFIG.mensagemPadrao,
+                corEspecial: null,
+                grupo: null
+            };
+            
+            exibirMensagem();
+            criarFogos(5);
+            mostrarNotificacao("Mensagem gerada com sucesso! ✨");
+        }
+        
+        // EXIBIR MENSAGEM NA TELA
+        function exibirMensagem() {
+            if (!mensagemAtual) return;
+            
+            // Atualizar elementos da mensagem
+            elementos.msgDestinatario.textContent = `Para: ${mensagemAtual.destinatario}`;
+            
+            if (mensagemAtual.corEspecial) {
+                elementos.msgDestinatario.style.color = mensagemAtual.corEspecial;
+            } else {
+                elementos.msgDestinatario.style.color = '#FFD700';
+            }
+            
+            elementos.msgTexto.textContent = mensagemAtual.mensagem;
+            elementos.msgRemetente.innerHTML = `Com os melhores votos,<br><strong>Atenciosamente:</strong><br>${mensagemAtual.remetente}`;
+            
+            // Esconder imagem gerada anteriormente
+            elementos.imagemGerada.style.display = 'none';
+            
+            // Ir para tela de mensagem
+            mudarTela('tela-mensagem');
+        }
+        
+        // GERAR IMAGEM DA MENSAGEM
+        function gerarImagemDaMensagem() {
+            if (!mensagemAtual) return;
+            
+            // Mostrar indicador de carregamento
+            elementos.carregando.style.display = 'flex';
+            
+            // Preparar conteúdo para a imagem
+            elementos.imgDestinatario.textContent = `Para: ${mensagemAtual.destinatario}`;
+            elementos.imgTexto.textContent = mensagemAtual.mensagem;
+            elementos.imgRemetente.innerHTML = `Com os melhores votos,<br><strong>Atenciosamente:</strong><br>${mensagemAtual.remetente}`;
+            
+            // Mostrar o container temporariamente
+            elementos.containerImagem.style.display = 'block';
+            
+            // Usar html2canvas para gerar a imagem
+            html2canvas(elementos.containerImagem, {
+                backgroundColor: null,
+                scale: 2,
+                useCORS: true,
+                logging: false
+            }).then(canvas => {
+                // Converter canvas para data URL
+                const dataUrl = canvas.toDataURL('image/png');
+                
+                // Mostrar a imagem gerada
+                elementos.imagemResultado.src = dataUrl;
+                elementos.imagemGerada.style.display = 'block';
+                
+                // Armazenar a data URL para download
+                elementos.imagemResultado.dataset.downloadUrl = dataUrl;
+                
+                // Esconder indicador de carregamento
+                elementos.carregando.style.display = 'none';
+                
+                // Esconder o container
+                elementos.containerImagem.style.display = 'none';
+                
+                mostrarNotificacao("Imagem gerada com sucesso! 🖼️");
+                
+                // Rolar para a imagem
+                elementos.imagemGerada.scrollIntoView({ behavior: 'smooth' });
+            }).catch(error => {
+                console.error("Erro ao gerar imagem:", error);
+                mostrarNotificacao("Erro ao gerar imagem. Tente novamente.");
+                elementos.carregando.style.display = 'none';
+                elementos.containerImagem.style.display = 'none';
+            });
+        }
+        
+        // BAIXAR IMAGEM GERADA
+        function baixarImagem() {
+            const dataUrl = elementos.imagemResultado.dataset.downloadUrl;
+            if (!dataUrl) return;
+            
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = `Feliz-Ano-Novo-2026-para-${mensagemAtual.destinatario.replace(/\s+/g, '-')}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            mostrarNotificacao("Imagem baixada com sucesso! 💾");
+        }
+        
+        // COMPARTILHAR TEXTO NO WHATSAPP
+        function compartilharTextoWhatsApp() {
+            if (!mensagemAtual) return;
+            
+            const texto = encodeURIComponent(
+                `🎉 *FELIZ ANO NOVO ${CONFIG.ano}!* 🎉\n\n` +
+                `*Para:* ${mensagemAtual.destinatario}\n\n` +
+                `${mensagemAtual.mensagem}\n\n` +
+                `_Com os melhores votos,_\n` +
+                `*Atenciosamente:* ${mensagemAtual.remetente}\n\n` +
+                `✨✨✨✨✨✨✨✨\n\n` +
+                `_Enviado via Mensageiro de Ano Novo 2026_`
+            );
+            
+            const url = `https://wa.me/?text=${texto}`;
+            
+            // Tentar abrir no WhatsApp
+            window.open(url, '_blank');
+            
+            mostrarNotificacao("Compartilhando no WhatsApp...");
+        }
+        
+        // CRIAR EFEITO DE NEVE/CONFETES
+        function criarNeve() {
+            if (!elementos.snow) return;
+            
+            // Limpar neve anterior
+            elementos.snow.innerHTML = '';
+            
+            // Criar flocos de neve/confetes
+            for (let i = 0; i < 100; i++) {
+                const floco = document.createElement('div');
+                floco.classList.add('snowflake');
+                
+                // Tamanho aleatório
+                const size = Math.random() * 5 + 2;
+                floco.style.width = `${size}px`;
+                floco.style.height = `${size}px`;
+                
+                // Posição inicial aleatória
+                floco.style.left = `${Math.random() * 100}vw`;
+                floco.style.top = `-10px`;
+                
+                // Cor aleatória
+                const cores = ['#FFFFFF', '#FFD700', '#C0C0C0', '#4ECDC4', '#FF6B6B'];
+                floco.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+                
+                // Opacidade aleatória
+                floco.style.opacity = Math.random() * 0.7 + 0.3;
+                
+                // Duração da animação aleatória
+                const duration = Math.random() * 10 + 5;
+                floco.style.animationDuration = `${duration}s`;
+                
+                // Atraso inicial aleatório
+                floco.style.animationDelay = `${Math.random() * 5}s`;
+                
+                elementos.snow.appendChild(floco);
+            }
+        }
+        
+        // CRIAR EFEITO DE FOGOS DE ARTIFÍCIO
+        function criarFogos(quantidade) {
+            if (!elementos.fogos) return;
+            
+            // Limpar fogos anteriores
+            elementos.fogos.innerHTML = '';
+            
+            for (let i = 0; i < quantidade; i++) {
+                const fogo = document.createElement('div');
+                fogo.classList.add('fogo');
+                
+                // Tamanho aleatório
+                const size = Math.random() * 15 + 5;
+                fogo.style.width = `${size}px`;
+                fogo.style.height = `${size}px`;
+                
+                // Posição aleatória
+                const x = Math.random() * 100;
+                const y = Math.random() * 50 + 20;
+                fogo.style.setProperty('--x', `${x}vw`);
+                fogo.style.setProperty('--y', `${y}vh`);
+                
+                // Cor aleatória
+                const cores = ['#FFD700', '#FF6B6B', '#4ECDC4', '#A78BFA', '#F472B6'];
+                fogo.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+                
+                // Duração da animação
+                fogo.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`;
+                
+                elementos.fogos.appendChild(fogo);
+                
+                // Remover após animação
+                setTimeout(() => {
+                    if (fogo.parentElement) {
+                        fogo.remove();
+                    }
+                }, 1000);
+            }
+        }
+        
+        // MOSTRAR NOTIFICAÇÃO
+        function mostrarNotificacao(mensagem) {
+            if (!elementos.notificacao) return;
+            
+            elementos.notificacao.textContent = mensagem;
+            elementos.notificacao.style.display = 'block';
+            
+            // Esconder após 3 segundos
+            setTimeout(() => {
+                elementos.notificacao.style.display = 'none';
+            }, 3000);
+        }
+        
+        // MOSTRAR AJUDA
+        function mostrarAjuda() {
+            mostrarNotificacao("💡 Use a versão lista para nomes pré-cadastrados. Na versão livre, escolha entre os remetentes disponíveis ou personalize!");
+        }
+        
+        // INICIAR APLICATIVO
+        document.addEventListener('DOMContentLoaded', inicializar);
+    </script>
+</body>
+</html>
